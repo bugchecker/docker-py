@@ -31,7 +31,7 @@ class Image(Model):
         The image's tags.
         """
         return [
-            tag for tag in self.attrs.get('RepoTags', [])
+            tag for tag in (self.attrs.get('RepoTags') or [])
             if tag != '<none>:<none>'
         ]
 
